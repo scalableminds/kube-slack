@@ -19,7 +19,7 @@ class SlackNotifier{
 
 		console.log('Text:', item.text);
 		return this.slack.send({
-			text: item.text || 'No message available.',
+			text: item.text || '',
 			attachments: [item],
 		}).then(() => {
 			console.log('Slack message sent');

@@ -4,7 +4,7 @@ const Slack = require('node-slack');
 class SlackNotifier{
 	constructor(){
 		try{
-			console.log('Got Slack URL:', config.get('slack_url'))
+			console.log('Got Slack URL:', config.get('slack_url'));
 			this.slack = new Slack(config.get('slack_url'));
 		}catch(e){
 			console.error('Could not initialize Slack', e);
@@ -17,6 +17,7 @@ class SlackNotifier{
 			return;
 		}
 
+		console.log('Text:', item.text);
 		return this.slack.send({
 			text: item.text,
 			attachments: [item],

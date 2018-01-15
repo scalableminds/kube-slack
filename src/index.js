@@ -1,5 +1,14 @@
 /* eslint-env node */
 
+process.on("unhandledRejection", function(reason, promise) {
+	console.log(promise);
+	console.log(reason);
+});
+
+process.on("rejectionHandled", function(promise) {
+	console.log(promise);
+});
+
 const config = require('config');
 const FloodFilter = require('./floodFilter');
 

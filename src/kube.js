@@ -38,6 +38,8 @@ class Kubernetes {
 			}
 		}).then((list) => {
 			return list.items;
+		}).catch(function(e) {
+			console.log(e);
 		});
 	}
 
